@@ -1,0 +1,67 @@
+﻿@page
+@model RazorLibraryWebsite2.Pages.Books.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="container">
+        <div class="heading text-center"> 
+            <h2>Library Books </h2>
+         </div>
+
+                <p>
+                    <a asp-page="Create">Create New</a>
+                </p>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Book[0].Title)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Book[0].Authour)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Book[0].Publisher)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Book[0].PublishDate)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Book[0].Edition)
+                            </th>
+                          
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Book)
+                        {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Title)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Authour.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Publisher.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PublishDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Edition)
+                            </td>
+                           
+                            <td>
+                                <a asp-page="./Edit"    class="btn btn-primary " asp-route-id="@item.ID">Edit</a> |
+                                <a asp-page="./Details" class="btn btn-success bg-secondary" asp-route-id="@item.ID">Details</a> |
+                                <a asp-page="./Delete"  class="btn btn-danger bg-danger"asp-route-id="@item.ID">Delete</a>
+                            </td>
+                        
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>

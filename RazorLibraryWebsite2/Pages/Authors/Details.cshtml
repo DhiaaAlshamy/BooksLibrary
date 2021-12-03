@@ -1,0 +1,65 @@
+﻿@page
+@model RazorLibraryWebsite2.Pages.Authors.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="container">
+    <div class="heading text-center">
+    <h1>Details</h1>
+    </div>
+
+
+    <div>
+        <h4>Author</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Author.Name)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Author.Name)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Author.Address)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Author.Address)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Author.Email)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Author.Email)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Author.Gender)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Author.Gender)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Author.Mobile)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Author.Mobile)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Author.DateOfBirth)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Author.DateOfBirth)
+            </dd> 
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Author.PictureUrl)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Author.PictureUrl)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-page="./Edit" class="btn btn-primary" asp-route-id="@Model.Author.AuthorID">Edit</a> |
+        <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+    </div>
+    </div>
